@@ -1,0 +1,14 @@
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\bin\Debug\GD_Passport.exe.config
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\bin\Debug\GD_Passport.exe
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\bin\Debug\GD_Passport.pdb
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.csproj.AssemblyReference.cache
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.AddForm.resources
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.DopInfaForm.resources
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.Form1.resources
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.Form2.resources
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.MainForm.resources
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.Properties.Resources.resources
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.csproj.GenerateResource.cache
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.csproj.CoreCompileInputs.cache
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.exe
+C:\Users\Анастасия\source\repos\GD_Passport\GD_Passport\obj\Debug\GD_Passport.pdb
