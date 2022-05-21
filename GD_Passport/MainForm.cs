@@ -12,13 +12,19 @@ namespace GD_Passport
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(bool user)
         {
             InitializeComponent();
             button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
             button1.BackColor = ColorTranslator.FromHtml("#f0f0f0");
             button7.Visible = true;
             button1.Visible = false;
+            if (user == true)
+            {
+                Addbutton.Enabled = false;
+                Editbutton.Enabled = false;
+                Deletebutton.Enabled = false;
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)

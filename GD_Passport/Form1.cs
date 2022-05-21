@@ -19,7 +19,7 @@ namespace GD_Passport
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainForm s = new MainForm();
+            MainForm s = new MainForm(true);
             s.Show();
             this.Hide();
         }

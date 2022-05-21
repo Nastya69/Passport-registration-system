@@ -31,7 +31,7 @@ namespace GD_Passport
         {
             if (PINtextBox.Text == "2305")
             {
-                MainForm s = new MainForm();
+                MainForm s = new MainForm(false);
                 s.Show();
                 this.Hide();
             }
@@ -40,7 +40,6 @@ namespace GD_Passport
                 PINtextBox.Text = "";
                 MessageBox.Show("Неправильный PIN-код");
             }
-            
         }
     }
 }
