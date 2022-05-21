@@ -14,7 +14,9 @@ namespace GD_Passport
     {
         public MainForm()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+            button1.BackColor = ColorTranslator.FromHtml("#f0f0f0");
             button7.Visible = true;
             button1.Visible = false;
         }
@@ -33,7 +35,7 @@ namespace GD_Passport
             Printbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
             Searchbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
             Exitbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+            button1.BackColor = ColorTranslator.FromHtml("#9eb6c7");
             textBox1.BackColor = ColorTranslator.FromHtml("#9eb6c7");
             dataGridView1.BackgroundColor = ColorTranslator.FromHtml("#9eb6c7");
             button7.Visible = false;
