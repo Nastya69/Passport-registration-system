@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace GD_Passport
 {
     public partial class MainForm : Form
     {
+        private string result = "";
         public MainForm(bool user)
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace GD_Passport
             button1.BackColor = ColorTranslator.FromHtml("#f0f0f0");
             button7.Visible = true;
             button1.Visible = false;
-            //loadData("");
+            loadData("");
             if (user == true)
             {
                 Addbutton.Enabled = false;
@@ -110,6 +112,30 @@ namespace GD_Passport
         private void Searchbutton_Click(object sender, EventArgs e)
         {
             loadData(textBoxSearch.Text.Trim());
+        }
+        
+        void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
+
+        private void Printbutton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dataGridViewRow in dataGridView1.Rows)
+            {
+                result += dataGridView1[1, dataGridViewRow.Index].Value.ToString()+"\t";
+                result += dataGridView1[2, dataGridViewRow.Index].Value.ToString() + "\t";
+                result += dataGridView1[3, dataGridViewRow.Index].Value.ToString() + "\n";
+                result += dataGridView1[4, dataGridViewRow.Index].Value.ToString() + "  ";
+                result += dataGridView1[5, dataGridViewRow.Index].Value.ToString() + "  ";
+                result += dataGridView1[11, dataGridViewRow.Index].Value.ToString() + "\n\n";
+            }
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += PrintPageHandler;
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument;
+            if (printDialog.ShowDialog() == DialogResult.OK)
+                printDialog.Document.Print();
         }
     }
 }
