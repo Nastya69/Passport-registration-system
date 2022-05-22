@@ -487,5 +487,23 @@ namespace GD_Passport
                 MessageBox.Show(error, "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void comboBoxCountry_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBoxCountry.SelectedIndex != -1)
+            {
+                DBConnection.sql = "SELECT city_title FROM city WHERE country_id = " + (comboBoxCountry.SelectedIndex + 1);
+                DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
+                DataTable dt = DBConnection.getDataTable(DBConnection.cmd);
+                comboBoxCity.DataSource = dt;
+                comboBoxCity.DisplayMember = "city_title";
+                comboBoxCity.SelectedIndex = -1;
+                comboBoxCity.Enabled = true;
+            }
+            else
+            {
+                comboBoxCity.Enabled = false;
+            }
+        }
     }
 }

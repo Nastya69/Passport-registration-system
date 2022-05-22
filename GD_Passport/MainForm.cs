@@ -43,7 +43,7 @@ namespace GD_Passport
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            //loadData("","");
+            loadData("","");
             if (user == true)
             {
                 Addbutton.Enabled = false;
@@ -274,7 +274,38 @@ namespace GD_Passport
 
         private void Deletebutton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Удаление выполнено успешно!");
+            string names = "";
+            foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
+            {
+                names += dataGridView1[1, dataGridViewRow.Index].Value.ToString() + ", ";
+            }
+            DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите удалить " + names + "?", "Удаление", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    DBConnection.con.Open();
+                    foreach (DataGridViewRow dataGridViewRow in dataGridView1.SelectedRows)
+                    {
+                        DBConnection.sql = "DELETE FROM public.passport WHERE passport_id = @passport_id";
+                        DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
+                        DBConnection.cmd.Parameters.AddWithValue("passport_id", Int32.Parse(dataGridView1[0, dataGridViewRow.Index].Value.ToString()));
+                        DBConnection.cmd.ExecuteNonQuery();
+                    }
+                    DBConnection.con.Close();
+                    MessageBox.Show("Удаление выполнено успешно!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadData("", "");
+
+                }
+                catch (NpgsqlException ne)
+                {
+                    MessageBox.Show(ne.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    DBConnection.con.Close();
+                }
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -284,6 +315,11 @@ namespace GD_Passport
             t.SetToolTip(button7 , "Сменить \nцвет фона");
             t.SetToolTip(checkBoxAged, "Граждане только\nпенсионного возраста");
             t.SetToolTip(Printbutton, "Печать таблицы\nпо заданному фильтру");
+        }
+
+        private void checkBoxAged_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
