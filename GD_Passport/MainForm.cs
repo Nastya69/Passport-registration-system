@@ -23,7 +23,7 @@ namespace GD_Passport
             button1.BackColor = ColorTranslator.FromHtml("#f0f0f0");
             button7.Visible = true;
             button1.Visible = false;
-            loadData("");
+            //loadData("");
             if (user == true)
             {
                 Addbutton.Enabled = false;
@@ -34,7 +34,8 @@ namespace GD_Passport
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            СonfirmForm s = new СonfirmForm();
+            s.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
