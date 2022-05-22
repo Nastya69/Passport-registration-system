@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -12,12 +14,18 @@ using System.Windows.Forms;
 
 namespace GD_Passport
 {
-    public partial class AddForm : Form
+    public partial class EditForm : Form
     {
         Bitmap image;
         bool isImage;
+        byte[] bytes;
+        int id;
+        string series;
+        string num;
+        int personId;
 
-        public AddForm()
+        public EditForm(int passportID, string sur, string name, string patr, string sex, DateTime dateBirth, Bitmap photo, bool isPhoto, int series, int num, string dep,
+            string country, string city, string adr1, string adr2, DateTime dateExtr, int personId)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -55,6 +63,91 @@ namespace GD_Passport
             comboBoxCity.SelectedIndex = -1;
 
             comboBoxCity.Enabled = false;
+
+            id = passportID;
+            textBoxSurname.Text = sur;
+            textBoxName.Text = name;
+            textBoxPatr.Text = patr;
+            dateTimePickerBirth.Value = dateBirth;
+            textBoxSeries.Text = series.ToString();
+            textBoxNum.Text = num.ToString();
+            textBoxAdr1.Text = adr1;
+            textBoxAdr2.Text = adr2;
+            dateTimePickerExtr.Value = dateExtr;
+            isImage = isPhoto;
+            if (isImage)
+            {
+                image = new Bitmap(photo);
+                using (var ms = new MemoryStream())
+                {
+                    image.Save(ms, ImageFormat.Jpeg);
+                    bytes = ms.ToArray();
+                }
+                /*ImageConverter converter = new ImageConverter();
+                bytes = (byte[])converter.ConvertTo(image, typeof(byte[]));*/
+                pictureBoxPhoto.Image = image;
+            }
+
+
+            this.series = series.ToString();
+            this.num = num.ToString();
+            this.personId = personId;
+
+            DBConnection.con.Open();
+            DBConnection.sql = "SELECT sex_id FROM sex WHERE sex_title LIKE '" + sex + "';";
+            DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
+            NpgsqlDataReader dataReader = DBConnection.cmd.ExecuteReader();
+            int sexId = -1;
+            if (dataReader.Read())
+            {
+                sexId = dataReader.GetInt32(0);
+            }
+            dataReader.Close();
+            comboBoxSex.SelectedIndex = sexId - 1;
+
+            DBConnection.sql = "SELECT department_id FROM department WHERE department_title LIKE '" + dep + "';";
+            DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
+            dataReader = DBConnection.cmd.ExecuteReader();
+            int depId = -1;
+            if (dataReader.Read())
+            {
+                depId = dataReader.GetInt32(0);
+            }
+            dataReader.Close();
+            comboBoxDep.SelectedIndex = depId - 1;
+
+            DBConnection.sql = "SELECT country_id FROM country WHERE country_title LIKE '" + country + "';";
+            DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
+            dataReader = DBConnection.cmd.ExecuteReader();
+            int countryId = -1;
+            if (dataReader.Read())
+            {
+                countryId = dataReader.GetInt32(0);
+            }
+            dataReader.Close();
+            comboBoxCountry.SelectedIndex = countryId - 1;
+
+            DBConnection.sql = "SELECT city_id FROM city WHERE city_title LIKE '" + city + "';";
+            DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
+            dataReader = DBConnection.cmd.ExecuteReader();
+            int cityId = -1;
+            if (dataReader.Read())
+            {
+                cityId = dataReader.GetInt32(0);
+            }
+            dataReader.Close();
+            if (country == "ЛНР")
+            {
+                cityId -= 7;
+            }
+            if (country == "РОССИЯ")
+            {
+                cityId -= 12;
+            }
+            comboBoxCity.SelectedIndex = cityId - 1;
+
+            DBConnection.con.Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -206,6 +299,13 @@ namespace GD_Passport
                 {
                     image = new Bitmap(openDialog.FileName);
                     isImage = true;
+                    using (var ms = new MemoryStream())
+                    {
+                        image.Save(ms, ImageFormat.Jpeg);
+                        bytes = ms.ToArray();
+                    }
+                    /* ImageConverter converter = new ImageConverter();
+                     bytes = (byte[])converter.ConvertTo(image, typeof(byte[]));*/
                     pictureBoxPhoto.Image = image;
                 }
                 catch
@@ -306,7 +406,7 @@ namespace GD_Passport
                 isOk2 = false;
                 error += "\nДата выдачи не может быть раньше даты рождения";
             }
-            if (isOk2)
+            if (isOk2 && (textBoxSeries.Text != series || textBoxNum.Text != num))
             {
                 DBConnection.con.Open();
                 DBConnection.sql = "SELECT COUNT(*) FROM passport WHERE series = @series AND num = @num";
@@ -334,31 +434,21 @@ namespace GD_Passport
                 {
                     DBConnection.con.Open();
 
-                    DBConnection.sql = "INSERT INTO public.person(surname, name, patronym, date_birth, sex_id, photo) " +
-                            "VALUES(@surname, @name, @patronym, @date_birth, @sex_id, @photo); ";
+                    DBConnection.sql = "UPDATE public.person SET surname=@surname, name=@name, patronym=@patronym, date_birth=@date_birth, sex_id=@sex_id, photo=@photo WHERE person_id = @person_id ";
                     DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
                     DBConnection.cmd.Parameters.AddWithValue("surname", textBoxSurname.Text);
                     DBConnection.cmd.Parameters.AddWithValue("name", textBoxName.Text);
                     DBConnection.cmd.Parameters.AddWithValue("patronym", textBoxPatr.Text);
                     DBConnection.cmd.Parameters.AddWithValue("date_birth", NpgsqlTypes.NpgsqlDbType.Date, dateTimePickerBirth.Value);
                     DBConnection.cmd.Parameters.AddWithValue("sex_id", comboBoxSex.SelectedIndex + 1);
-                    ImageConverter converter = new ImageConverter();
-                    DBConnection.cmd.Parameters.AddWithValue("photo", NpgsqlTypes.NpgsqlDbType.Bytea, (byte[])converter.ConvertTo(image, typeof(byte[])));
+                    DBConnection.cmd.Parameters.AddWithValue("photo", NpgsqlTypes.NpgsqlDbType.Bytea, bytes);
+                    DBConnection.cmd.Parameters.AddWithValue("person_id", personId);
                     DBConnection.cmd.ExecuteNonQuery();
 
-                    DBConnection.sql = "SELECT person_id FROM person ORDER BY person_id DESC LIMIT 1;";
-                    DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
-                    NpgsqlDataReader dataReader = DBConnection.cmd.ExecuteReader();
-                    int personId = 0;
-                    if (dataReader.Read())
-                    {
-                        personId = dataReader.GetInt32(0);
-                    }
-                    dataReader.Close();
 
 
-                    DBConnection.sql = "INSERT INTO public.passport(series, num, person_id, department_id, city_id, address1, adress2, date)" +
-                            "VALUES(@series, @num, @person_id, @department_id, @city_id, @address1, @adress2, @date); ";
+                    DBConnection.sql = "UPDATE public.passport SET series=@series, num=@num, person_id=@person_id, department_id=@department_id, city_id=@city_id, " +
+                        "address1=@address1, adress2=@adress2, date=@date WHERE passport_id = @passport_id";
                     DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
                     DBConnection.cmd.Parameters.AddWithValue("series", Int32.Parse(textBoxSeries.Text));
                     DBConnection.cmd.Parameters.AddWithValue("num", Int32.Parse(textBoxNum.Text));
@@ -377,9 +467,10 @@ namespace GD_Passport
                     DBConnection.cmd.Parameters.AddWithValue("address1", textBoxAdr1.Text);
                     DBConnection.cmd.Parameters.AddWithValue("adress2", textBoxAdr1.Text);
                     DBConnection.cmd.Parameters.AddWithValue("date", NpgsqlTypes.NpgsqlDbType.Date, dateTimePickerBirth.Value);
+                    DBConnection.cmd.Parameters.AddWithValue("passport_id", id);
                     DBConnection.cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Добавлено!", "Добавление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Изменено!", "Редактирование", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DBConnection.con.Close();
                     this.Close();
                 }
