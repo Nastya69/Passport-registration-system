@@ -20,10 +20,7 @@ namespace GD_Passport
         {
             InitializeComponent();
             button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            button1.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            button7.Visible = true;
-            button1.Visible = false;
-            loadData("");
+            //loadData("");
             if (user == true)
             {
                 Addbutton.Enabled = false;
@@ -34,37 +31,38 @@ namespace GD_Passport
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            СonfirmForm s = new СonfirmForm();
+            s.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            this.BackColor = ColorTranslator.FromHtml("#798d9c");
-            Addbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            Editbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            Deletebutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            Printbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            Searchbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            Exitbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            textBoxSearch.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            dataGridView1.BackgroundColor = ColorTranslator.FromHtml("#9eb6c7");
-            button7.Visible = false;
-            button1.Visible = true;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.BackColor = ColorTranslator.FromHtml("#c0e2f9");
-            Addbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            Editbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            Deletebutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            Printbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            Searchbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            Exitbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            textBoxSearch.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            dataGridView1.BackgroundColor = ColorTranslator.FromHtml("#f0f0f0");
-            button1.Visible = false;
-            button7.Visible = true;
+            if (button7.BackColor == ColorTranslator.FromHtml("#9eb6c7"))
+            {
+                this.BackColor = ColorTranslator.FromHtml("#798d9c");
+                Addbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                Editbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                Deletebutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                Printbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                Searchbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                Exitbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                textBoxSearch.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                dataGridView1.BackgroundColor = ColorTranslator.FromHtml("#9eb6c7");
+                button7.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+            }
+            else
+            {
+                this.BackColor = ColorTranslator.FromHtml("#c0e2f9");
+                Addbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                Editbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                Deletebutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                Printbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                Searchbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                Exitbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                textBoxSearch.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                dataGridView1.BackgroundColor = ColorTranslator.FromHtml("#f0f0f0");
+                button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -136,6 +134,11 @@ namespace GD_Passport
             printDialog.Document = printDocument;
             if (printDialog.ShowDialog() == DialogResult.OK)
                 printDialog.Document.Print();
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

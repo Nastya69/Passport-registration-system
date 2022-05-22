@@ -73,6 +73,7 @@ namespace GD_Passport
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(487, 305);
             this.button3.Name = "button3";
@@ -87,6 +88,7 @@ namespace GD_Passport
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(226)))), ((int)(((byte)(249)))));
+            this.CancelButton = this.button3;
             this.ClientSize = new System.Drawing.Size(569, 348);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

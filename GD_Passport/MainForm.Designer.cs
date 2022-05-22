@@ -40,7 +40,6 @@ namespace GD_Passport
             this.Printbutton = new System.Windows.Forms.Button();
             this.Exitbutton = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,10 +67,12 @@ namespace GD_Passport
             // 
             // textBoxSearch
             // 
+            this.textBoxSearch.AllowDrop = true;
             this.textBoxSearch.Location = new System.Drawing.Point(211, 370);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearch.TabIndex = 2;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // Searchbutton
             // 
@@ -129,7 +130,8 @@ namespace GD_Passport
             // Exitbutton
             // 
             this.Exitbutton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Exitbutton.Location = new System.Drawing.Point(508, 371);
+            this.Exitbutton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Exitbutton.Location = new System.Drawing.Point(519, 371);
             this.Exitbutton.Name = "Exitbutton";
             this.Exitbutton.Size = new System.Drawing.Size(75, 23);
             this.Exitbutton.TabIndex = 8;
@@ -148,24 +150,13 @@ namespace GD_Passport
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(542, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 43);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(226)))), ((int)(((byte)(249)))));
+            this.CancelButton = this.Exitbutton;
             this.ClientSize = new System.Drawing.Size(606, 407);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.Exitbutton);
             this.Controls.Add(this.Printbutton);
@@ -196,6 +187,5 @@ namespace GD_Passport
         private System.Windows.Forms.Button Printbutton;
         private System.Windows.Forms.Button Exitbutton;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button1;
     }
 }

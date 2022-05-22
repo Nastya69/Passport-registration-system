@@ -67,7 +67,6 @@ namespace GD_Passport
             this.AddFotobutton = new System.Windows.Forms.Button();
             this.Savebutton = new System.Windows.Forms.Button();
             this.Cancelbutton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -403,6 +402,7 @@ namespace GD_Passport
             // Cancelbutton
             // 
             this.Cancelbutton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Cancelbutton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelbutton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Cancelbutton.Location = new System.Drawing.Point(696, 463);
             this.Cancelbutton.Name = "Cancelbutton";
@@ -411,17 +411,6 @@ namespace GD_Passport
             this.Cancelbutton.Text = "Отмена";
             this.Cancelbutton.UseVisualStyleBackColor = false;
             this.Cancelbutton.Click += new System.EventHandler(this.Cancelbutton_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(726, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 43);
-            this.button1.TabIndex = 39;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button7
             // 
@@ -439,8 +428,8 @@ namespace GD_Passport
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(226)))), ((int)(((byte)(249)))));
+            this.CancelButton = this.Cancelbutton;
             this.ClientSize = new System.Drawing.Size(800, 503);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.Cancelbutton);
             this.Controls.Add(this.Savebutton);
@@ -527,7 +516,6 @@ namespace GD_Passport
         private System.Windows.Forms.Button AddFotobutton;
         private System.Windows.Forms.Button Savebutton;
         private System.Windows.Forms.Button Cancelbutton;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button7;
     }
 }

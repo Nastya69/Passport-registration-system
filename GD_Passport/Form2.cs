@@ -41,5 +41,10 @@ namespace GD_Passport
                 MessageBox.Show("Неправильный PIN-код");
             }
         }
+
+        private void PINtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
