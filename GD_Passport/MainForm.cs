@@ -155,6 +155,7 @@ namespace GD_Passport
 
             if (dataGridView1.RowCount > 0)
             {
+                Printbutton.Enabled = true;
                 passportID = Int32.Parse(dataGridView1[0, 0].Value.ToString());
                 sur = dataGridView1[1, 0].Value.ToString();
                 name = dataGridView1[2, 0].Value.ToString();
@@ -185,6 +186,10 @@ namespace GD_Passport
                 personId = id;
                 DBConnection.con.Close();
             }
+            else
+            {
+                Printbutton.Enabled = false;
+            }
         }
 
         private void Searchbutton_Click(object sender, EventArgs e)
@@ -202,20 +207,14 @@ namespace GD_Passport
         
         void PrintPageHandler(object sender, PrintPageEventArgs e)
         {
-            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 0, 0);
+            e.Graphics.DrawImage(new Bitmap(image, new Size(100, 100)), new Point(10, 10));
+            e.Graphics.DrawString(result, new Font("Arial", 14), Brushes.Black, 110, 10);
         }
 
         private void Printbutton_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow dataGridViewRow in dataGridView1.Rows)
-            {
-                result += dataGridView1[1, dataGridViewRow.Index].Value.ToString()+"\t";
-                result += dataGridView1[2, dataGridViewRow.Index].Value.ToString() + "\t";
-                result += dataGridView1[3, dataGridViewRow.Index].Value.ToString() + "\n";
-                result += dataGridView1[4, dataGridViewRow.Index].Value.ToString() + "  ";
-                result += dataGridView1[5, dataGridViewRow.Index].Value.ToString() + "  ";
-                result += dataGridView1[11, dataGridViewRow.Index].Value.ToString() + "\n\n";
-            }
+            result = sur + " " + name + " " + patr + " " + sex + " " + dateBirth.ToString("d") + "\n" + "Серия: " + series + " Номер: " + num + " Выдан: " + dep;
+            result += "\nМесто рождения: " + country + ". " + city + "\n" + "Адрес прописки: " + adr1 + "\nАдрес проживания: " + adr2;
             PrintDocument printDocument = new PrintDocument();
             printDocument.PrintPage += PrintPageHandler;
             PrintDialog printDialog = new PrintDialog();
