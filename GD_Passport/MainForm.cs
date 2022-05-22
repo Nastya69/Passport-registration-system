@@ -16,32 +16,11 @@ namespace GD_Passport
     public partial class MainForm : Form
     {
         private string result = "";
-        //столбцы таблицы
-        int passportID;
-        string sur;
-        string name;
-        string patr;
-        string sex;
-        DateTime dateBirth;
-        Bitmap image;
-        Dictionary<int, Bitmap> images;
-        bool isImage;
-        int series;
-        int num;
-        string dep;
-        string country;
-        string city;
-        string adr1;
-        string adr2;
-        DateTime dateExtr;
-        int personId;
-        //для поиска
-        bool isAged = false;
         public MainForm(bool user)
         {
             InitializeComponent();
             button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            loadData("","");
+            //loadData("");
             if (user == true)
             {
                 Addbutton.Enabled = false;
@@ -92,17 +71,9 @@ namespace GD_Passport
             s.Show();
         }
 
-        private void loadData(string keywordSur, string keywordAdr)
+        private void loadData(string keyword)
         {
-            if (isAged)
-            {
-                DBConnection.sql = "SELECT * FROM passport_aged_select('" + keywordSur + "%', '" + keywordAdr + "%')";
-            }
-            else
-            {
-                DBConnection.sql = "SELECT * FROM passport_select('" + keywordSur + "%', '" + keywordAdr + "%')";
-            }
-
+            DBConnection.sql = "SELECT * FROM passport_select('" + keyword + "%')";
             DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
             DataTable dt = DBConnection.getDataTable(DBConnection.cmd);
 
@@ -110,9 +81,9 @@ namespace GD_Passport
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = dt;
 
-            dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[1].HeaderText = "Фамилия";
-            dataGridView1.Columns[2].HeaderText = "Имя";
+            dataGridView1.Columns[0].HeaderText = "Фамилия";
+            dataGridView1.Columns[1].HeaderText = "Имя";
+            dataGridView1.Columns[2].HeaderText = "Фамилия";
             dataGridView1.Columns[3].HeaderText = "Отчество";
             dataGridView1.Columns[4].HeaderText = "Пол";
             dataGridView1.Columns[5].HeaderText = "Дата рождения";
@@ -124,72 +95,21 @@ namespace GD_Passport
             dataGridView1.Columns[11].HeaderText = "Город рождения";
             dataGridView1.Columns[12].HeaderText = "Адрес прописки";
             dataGridView1.Columns[13].HeaderText = "Адрес проживания";
-            dataGridView1.Columns[14].HeaderText = "Дата получения";
-
-            labelRows.Text = dataGridView1.RowCount + " строк";
-
-            images = new Dictionary<int, Bitmap>();
             foreach (DataGridViewRow dataGridViewRow in dataGridView1.Rows)
             {
-                if (dataGridViewRow.Index != -1)
-                {
-                    System.IO.MemoryStream myMemStream = new System.IO.MemoryStream((byte[])dataGridView1[6, dataGridViewRow.Index].Value);
-                    images[Int32.Parse(dataGridView1[0, dataGridViewRow.Index].Value.ToString())] = new Bitmap(myMemStream);
-                    System.Drawing.Image fullsizeImage = System.Drawing.Image.FromStream(myMemStream);
-                    System.Drawing.Image newImage = fullsizeImage.GetThumbnailImage(50, 50, null, IntPtr.Zero);
-                    System.IO.MemoryStream myResult = new System.IO.MemoryStream();
-                    newImage.Save(myResult, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    dataGridView1[6, dataGridViewRow.Index].Value = myResult.ToArray();
-                    myMemStream.Close();
-                    myResult.Close();
-                }
+                System.IO.MemoryStream myMemStream = new System.IO.MemoryStream((byte[])dataGridView1[6, dataGridViewRow.Index].Value);
+                System.Drawing.Image fullsizeImage = System.Drawing.Image.FromStream(myMemStream);
+                System.Drawing.Image newImage = fullsizeImage.GetThumbnailImage(50, 50, null, IntPtr.Zero);
+                System.IO.MemoryStream myResult = new System.IO.MemoryStream();
+                newImage.Save(myResult, System.Drawing.Imaging.ImageFormat.Jpeg);
+                dataGridView1[6, dataGridViewRow.Index].Value = myResult.ToArray();
             }
 
-            if (dataGridView1.RowCount > 0)
-            {
-                passportID = Int32.Parse(dataGridView1[0, 0].Value.ToString());
-                sur = dataGridView1[1, 0].Value.ToString();
-                name = dataGridView1[2, 0].Value.ToString();
-                patr = dataGridView1[3, 0].Value.ToString();
-                sex = dataGridView1[4, 0].Value.ToString();
-                dateBirth = Convert.ToDateTime(dataGridView1[5, 0].Value);
-                image = images[passportID];
-                isImage = true;
-                series = Int32.Parse(dataGridView1[7, 0].Value.ToString());
-                num = Int32.Parse(dataGridView1[8, 0].Value.ToString());
-                dep = dataGridView1[9, 0].Value.ToString();
-                country = dataGridView1[10, 0].Value.ToString();
-                city = dataGridView1[11, 0].Value.ToString();
-                adr1 = dataGridView1[12, 0].Value.ToString();
-                adr2 = dataGridView1[13, 0].Value.ToString();
-                dateExtr = Convert.ToDateTime(dataGridView1[14, 0].Value);
-
-                DBConnection.con.Open();
-                DBConnection.sql = "SELECT person_id FROM passport WHERE passport_id =" + passportID;
-                DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
-                NpgsqlDataReader dataReader = DBConnection.cmd.ExecuteReader();
-                int id = -1;
-                if (dataReader.Read())
-                {
-                    id = dataReader.GetInt32(0);
-                }
-                dataReader.Close();
-                personId = id;
-                DBConnection.con.Close();
-            }
         }
 
         private void Searchbutton_Click(object sender, EventArgs e)
         {
-            if (checkBoxAged.Checked)
-            {
-                isAged = true;
-            }
-            else
-            {
-                isAged = false;
-            }
-            loadData(textBoxSearch.Text.Trim(), textBoxAdr2.Text.Trim());
+            loadData(textBoxSearch.Text.Trim());
         }
         
         void PrintPageHandler(object sender, PrintPageEventArgs e)
@@ -219,49 +139,6 @@ namespace GD_Passport
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                passportID = Int32.Parse(dataGridView1[0, e.RowIndex].Value.ToString());
-                sur = dataGridView1[1, e.RowIndex].Value.ToString();
-                name = dataGridView1[2, e.RowIndex].Value.ToString();
-                patr = dataGridView1[3, e.RowIndex].Value.ToString();
-                sex = dataGridView1[4, e.RowIndex].Value.ToString();
-                dateBirth = Convert.ToDateTime(dataGridView1[5, e.RowIndex].Value);
-                image = images[passportID];
-                isImage = true;
-                series = Int32.Parse(dataGridView1[7, e.RowIndex].Value.ToString());
-                num = Int32.Parse(dataGridView1[8, e.RowIndex].Value.ToString());
-                dep = dataGridView1[9, e.RowIndex].Value.ToString();
-                country = dataGridView1[10, e.RowIndex].Value.ToString();
-                city = dataGridView1[11, e.RowIndex].Value.ToString();
-                adr1 = dataGridView1[12, e.RowIndex].Value.ToString();
-                adr2 = dataGridView1[13, e.RowIndex].Value.ToString();
-                dateExtr = Convert.ToDateTime(dataGridView1[14, e.RowIndex].Value);
-
-                DBConnection.con.Open();
-                DBConnection.sql = "SELECT person_id FROM passport WHERE passport_id = " + passportID;
-                DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
-                NpgsqlDataReader dataReader = DBConnection.cmd.ExecuteReader();
-                int id = -1;
-                if (dataReader.Read())
-                {
-                    id = dataReader.GetInt32(0);
-                }
-                dataReader.Close();
-                personId = id;
-                DBConnection.con.Close();
-            }
-        }
-
-        private void Editbutton_Click(object sender, EventArgs e)
-        {
-            EditForm s = new EditForm(passportID, sur, name, patr, sex, dateBirth, image, isImage, series, num, dep, country, city, adr1, adr2, dateExtr, personId);
-            s.ShowDialog();
-            loadData("", "");
         }
     }
 }

@@ -36,47 +36,48 @@ namespace GD_Passport
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxSurname = new System.Windows.Forms.TextBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBoxPatr = new System.Windows.Forms.TextBox();
-            this.dateTimePickerBirth = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxSex = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBoxSeries = new System.Windows.Forms.TextBox();
-            this.textBoxNum = new System.Windows.Forms.TextBox();
-            this.dateTimePickerExtr = new System.Windows.Forms.DateTimePicker();
-            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBoxAdr1 = new System.Windows.Forms.TextBox();
-            this.textBoxAdr2 = new System.Windows.Forms.TextBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.AddFotobutton = new System.Windows.Forms.Button();
             this.Savebutton = new System.Windows.Forms.Button();
             this.Cancelbutton = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.comboBoxDep = new System.Windows.Forms.ComboBox();
-            this.comboBoxCity = new System.Windows.Forms.ComboBox();
-            this.comboBoxCountry = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(60, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(45, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 24);
+            this.label1.Size = new System.Drawing.Size(172, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Данные о гражданине";
             // 
@@ -84,10 +85,9 @@ namespace GD_Passport
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(17, 89);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(13, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 21);
+            this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Фамилия ";
             // 
@@ -95,10 +95,9 @@ namespace GD_Passport
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(371, 86);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(278, 70);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 21);
+            this.label3.Size = new System.Drawing.Size(30, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Имя";
             // 
@@ -106,10 +105,9 @@ namespace GD_Passport
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(668, 86);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(501, 70);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 21);
+            this.label4.Size = new System.Drawing.Size(62, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Отчество";
             // 
@@ -117,10 +115,9 @@ namespace GD_Passport
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(17, 139);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(13, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 21);
+            this.label5.Size = new System.Drawing.Size(99, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Дата рождения";
             // 
@@ -128,72 +125,62 @@ namespace GD_Passport
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(371, 139);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(278, 113);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 21);
+            this.label6.Size = new System.Drawing.Size(29, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Пол";
             // 
-            // textBoxSurname
+            // textBox1
             // 
-            this.textBoxSurname.Location = new System.Drawing.Point(124, 87);
-            this.textBoxSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxSurname.Name = "textBoxSurname";
-            this.textBoxSurname.Size = new System.Drawing.Size(184, 22);
-            this.textBoxSurname.TabIndex = 6;
-            this.textBoxSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSurname_KeyPress);
+            this.textBox1.Location = new System.Drawing.Point(93, 71);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(139, 20);
+            this.textBox1.TabIndex = 6;
             // 
-            // textBoxName
+            // textBox2
             // 
-            this.textBoxName.Location = new System.Drawing.Point(435, 86);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(184, 22);
-            this.textBoxName.TabIndex = 7;
-            this.textBoxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxName_KeyPress);
+            this.textBox2.Location = new System.Drawing.Point(326, 70);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(139, 20);
+            this.textBox2.TabIndex = 7;
             // 
-            // textBoxPatr
+            // textBox3
             // 
-            this.textBoxPatr.Location = new System.Drawing.Point(776, 84);
-            this.textBoxPatr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxPatr.Name = "textBoxPatr";
-            this.textBoxPatr.Size = new System.Drawing.Size(184, 22);
-            this.textBoxPatr.TabIndex = 8;
-            this.textBoxPatr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPatr_KeyPress);
+            this.textBox3.Location = new System.Drawing.Point(582, 68);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(139, 20);
+            this.textBox3.TabIndex = 8;
             // 
-            // dateTimePickerBirth
+            // dateTimePicker1
             // 
-            this.dateTimePickerBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerBirth.Location = new System.Drawing.Point(167, 139);
-            this.dateTimePickerBirth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePickerBirth.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
-            this.dateTimePickerBirth.MinDate = new System.DateTime(1932, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerBirth.Name = "dateTimePickerBirth";
-            this.dateTimePickerBirth.Size = new System.Drawing.Size(123, 22);
-            this.dateTimePickerBirth.TabIndex = 9;
-            this.dateTimePickerBirth.Value = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(125, 113);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(1932, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(93, 20);
+            this.dateTimePicker1.TabIndex = 9;
+            this.dateTimePicker1.Value = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
             // 
-            // comboBoxSex
+            // comboBox1
             // 
-            this.comboBoxSex.FormattingEnabled = true;
-            this.comboBoxSex.Items.AddRange(new object[] {
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
             "ЖЕН",
             "МУЖ"});
-            this.comboBoxSex.Location = new System.Drawing.Point(435, 139);
-            this.comboBoxSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxSex.Name = "comboBoxSex";
-            this.comboBoxSex.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxSex.TabIndex = 10;
+            this.comboBox1.Location = new System.Drawing.Point(326, 113);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 10;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(60, 183);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(45, 149);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(197, 24);
+            this.label7.Size = new System.Drawing.Size(157, 19);
             this.label7.TabIndex = 11;
             this.label7.Text = "Паспортные данные";
             // 
@@ -201,10 +188,9 @@ namespace GD_Passport
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(17, 231);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(13, 188);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 21);
+            this.label8.Size = new System.Drawing.Size(43, 16);
             this.label8.TabIndex = 12;
             this.label8.Text = "Серия";
             // 
@@ -212,10 +198,9 @@ namespace GD_Passport
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(369, 233);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(277, 189);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 21);
+            this.label9.Size = new System.Drawing.Size(44, 16);
             this.label9.TabIndex = 13;
             this.label9.Text = "Номер";
             // 
@@ -223,10 +208,9 @@ namespace GD_Passport
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(19, 294);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(14, 239);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(188, 21);
+            this.label10.Size = new System.Drawing.Size(142, 16);
             this.label10.TabIndex = 14;
             this.label10.Text = "Дата выдачи паспорта";
             // 
@@ -234,72 +218,104 @@ namespace GD_Passport
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(371, 294);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(278, 239);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(162, 21);
+            this.label11.Size = new System.Drawing.Size(121, 16);
             this.label11.TabIndex = 15;
             this.label11.Text = "Кем выдан паспорт";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(14, 282);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(104, 16);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Национальность";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(278, 283);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(85, 16);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Гражданство";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(44, 349);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(45, 337);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(163, 24);
+            this.label14.Size = new System.Drawing.Size(131, 19);
             this.label14.TabIndex = 18;
             this.label14.Text = "Место рождения";
             // 
-            // textBoxSeries
+            // textBox4
             // 
-            this.textBoxSeries.Location = new System.Drawing.Point(84, 231);
-            this.textBoxSeries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxSeries.Name = "textBoxSeries";
-            this.textBoxSeries.Size = new System.Drawing.Size(184, 22);
-            this.textBoxSeries.TabIndex = 19;
-            this.textBoxSeries.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            this.textBox4.Location = new System.Drawing.Point(63, 188);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(139, 20);
+            this.textBox4.TabIndex = 19;
             // 
-            // textBoxNum
+            // textBox5
             // 
-            this.textBoxNum.Location = new System.Drawing.Point(435, 231);
-            this.textBoxNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxNum.Name = "textBoxNum";
-            this.textBoxNum.Size = new System.Drawing.Size(187, 22);
-            this.textBoxNum.TabIndex = 20;
-            this.textBoxNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNum_KeyPress);
+            this.textBox5.Location = new System.Drawing.Point(326, 188);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(141, 20);
+            this.textBox5.TabIndex = 20;
             // 
-            // dateTimePickerExtr
+            // dateTimePicker2
             // 
-            this.dateTimePickerExtr.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerExtr.Location = new System.Drawing.Point(219, 294);
-            this.dateTimePickerExtr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePickerExtr.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
-            this.dateTimePickerExtr.MinDate = new System.DateTime(1948, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerExtr.Name = "dateTimePickerExtr";
-            this.dateTimePickerExtr.Size = new System.Drawing.Size(121, 22);
-            this.dateTimePickerExtr.TabIndex = 21;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(164, 239);
+            this.dateTimePicker2.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker2.MinDate = new System.DateTime(1948, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(92, 20);
+            this.dateTimePicker2.TabIndex = 21;
             // 
-            // pictureBoxPhoto
+            // textBox6
             // 
-            this.pictureBoxPhoto.Image = global::GD_Passport.Properties.Resources.No_Image;
-            this.pictureBoxPhoto.Location = new System.Drawing.Point(776, 192);
-            this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
-            this.pictureBoxPhoto.Size = new System.Drawing.Size(235, 181);
-            this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPhoto.TabIndex = 25;
-            this.pictureBoxPhoto.TabStop = false;
+            this.textBox6.Location = new System.Drawing.Point(405, 239);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(139, 20);
+            this.textBox6.TabIndex = 22;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(124, 282);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(132, 21);
+            this.comboBox2.TabIndex = 23;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(369, 282);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(130, 21);
+            this.comboBox3.TabIndex = 24;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(582, 156);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(176, 147);
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(3, 400);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(14, 379);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(105, 21);
+            this.label15.Size = new System.Drawing.Size(80, 16);
             this.label15.TabIndex = 26;
             this.label15.Text = "Государство";
             // 
@@ -307,10 +323,9 @@ namespace GD_Passport
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(357, 399);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(280, 378);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 21);
+            this.label16.Size = new System.Drawing.Size(42, 16);
             this.label16.TabIndex = 27;
             this.label16.Text = "Город";
             // 
@@ -318,10 +333,9 @@ namespace GD_Passport
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(3, 450);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(14, 419);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(135, 21);
+            this.label17.Size = new System.Drawing.Size(100, 16);
             this.label17.TabIndex = 28;
             this.label17.Text = "Адрес прописки";
             // 
@@ -329,182 +343,135 @@ namespace GD_Passport
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(353, 450);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(277, 419);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(158, 21);
+            this.label18.Size = new System.Drawing.Size(119, 16);
             this.label18.TabIndex = 29;
             this.label18.Text = "Адрес проживания";
             // 
-            // textBoxAdr1
+            // textBox7
             // 
-            this.textBoxAdr1.Location = new System.Drawing.Point(146, 449);
-            this.textBoxAdr1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxAdr1.Name = "textBoxAdr1";
-            this.textBoxAdr1.Size = new System.Drawing.Size(184, 22);
-            this.textBoxAdr1.TabIndex = 33;
+            this.textBox7.Location = new System.Drawing.Point(100, 379);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(139, 20);
+            this.textBox7.TabIndex = 31;
             // 
-            // textBoxAdr2
+            // textBox8
             // 
-            this.textBoxAdr2.Location = new System.Drawing.Point(520, 448);
-            this.textBoxAdr2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxAdr2.Name = "textBoxAdr2";
-            this.textBoxAdr2.Size = new System.Drawing.Size(184, 22);
-            this.textBoxAdr2.TabIndex = 34;
+            this.textBox8.Location = new System.Drawing.Point(328, 378);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(139, 20);
+            this.textBox8.TabIndex = 32;
             // 
-            // buttonAdd
+            // textBox9
             // 
-            this.buttonAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonAdd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAdd.Location = new System.Drawing.Point(777, 380);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(235, 31);
-            this.buttonAdd.TabIndex = 36;
-            this.buttonAdd.Text = "Загрузить фотографию";
-            this.buttonAdd.UseVisualStyleBackColor = false;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.textBox9.Location = new System.Drawing.Point(125, 418);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(139, 20);
+            this.textBox9.TabIndex = 33;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(402, 418);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(139, 20);
+            this.textBox10.TabIndex = 34;
+            // 
+            // AddFotobutton
+            // 
+            this.AddFotobutton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.AddFotobutton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddFotobutton.Location = new System.Drawing.Point(583, 309);
+            this.AddFotobutton.Name = "AddFotobutton";
+            this.AddFotobutton.Size = new System.Drawing.Size(176, 25);
+            this.AddFotobutton.TabIndex = 36;
+            this.AddFotobutton.Text = "Загрузить фотографию";
+            this.AddFotobutton.UseVisualStyleBackColor = false;
             // 
             // Savebutton
             // 
             this.Savebutton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Savebutton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Savebutton.Location = new System.Drawing.Point(777, 504);
-            this.Savebutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Savebutton.Location = new System.Drawing.Point(583, 463);
             this.Savebutton.Name = "Savebutton";
-            this.Savebutton.Size = new System.Drawing.Size(109, 34);
+            this.Savebutton.Size = new System.Drawing.Size(82, 28);
             this.Savebutton.TabIndex = 37;
             this.Savebutton.Text = "Сохранить";
             this.Savebutton.UseVisualStyleBackColor = false;
-            this.Savebutton.Click += new System.EventHandler(this.Savebutton_Click);
             // 
             // Cancelbutton
             // 
             this.Cancelbutton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Cancelbutton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelbutton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Cancelbutton.Location = new System.Drawing.Point(928, 504);
-            this.Cancelbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancelbutton.Location = new System.Drawing.Point(696, 463);
             this.Cancelbutton.Name = "Cancelbutton";
-            this.Cancelbutton.Size = new System.Drawing.Size(109, 34);
+            this.Cancelbutton.Size = new System.Drawing.Size(82, 28);
             this.Cancelbutton.TabIndex = 38;
             this.Cancelbutton.Text = "Отмена";
             this.Cancelbutton.UseVisualStyleBackColor = false;
             this.Cancelbutton.Click += new System.EventHandler(this.Cancelbutton_Click);
             // 
-            // buttonDelete
-            // 
-            this.buttonDelete.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonDelete.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDelete.Location = new System.Drawing.Point(776, 419);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(235, 31);
-            this.buttonDelete.TabIndex = 41;
-            this.buttonDelete.Text = "Удалить фотографию";
-            this.buttonDelete.UseVisualStyleBackColor = false;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // comboBoxDep
-            // 
-            this.comboBoxDep.FormattingEnabled = true;
-            this.comboBoxDep.Location = new System.Drawing.Point(536, 296);
-            this.comboBoxDep.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxDep.Name = "comboBoxDep";
-            this.comboBoxDep.Size = new System.Drawing.Size(172, 24);
-            this.comboBoxDep.TabIndex = 42;
-            // 
-            // comboBoxCity
-            // 
-            this.comboBoxCity.FormattingEnabled = true;
-            this.comboBoxCity.Location = new System.Drawing.Point(520, 400);
-            this.comboBoxCity.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxCity.Name = "comboBoxCity";
-            this.comboBoxCity.Size = new System.Drawing.Size(184, 24);
-            this.comboBoxCity.TabIndex = 43;
-            // 
-            // comboBoxCountry
-            // 
-            this.comboBoxCountry.FormattingEnabled = true;
-            this.comboBoxCountry.Location = new System.Drawing.Point(151, 400);
-            this.comboBoxCountry.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxCountry.Name = "comboBoxCountry";
-            this.comboBoxCountry.Size = new System.Drawing.Size(184, 24);
-            this.comboBoxCountry.TabIndex = 44;
-            this.comboBoxCountry.SelectedIndexChanged += new System.EventHandler(this.comboBoxCountry_SelectedIndexChanged);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(985, 13);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 53);
-            this.button1.TabIndex = 45;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.Location = new System.Drawing.Point(985, 13);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Location = new System.Drawing.Point(726, 10);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(69, 53);
-            this.button7.TabIndex = 46;
+            this.button7.Size = new System.Drawing.Size(52, 43);
+            this.button7.TabIndex = 40;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // AddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(226)))), ((int)(((byte)(249)))));
             this.CancelButton = this.Cancelbutton;
-            this.ClientSize = new System.Drawing.Size(1067, 557);
+            this.ClientSize = new System.Drawing.Size(800, 503);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBoxCountry);
-            this.Controls.Add(this.comboBoxCity);
-            this.Controls.Add(this.comboBoxDep);
-            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.Cancelbutton);
             this.Controls.Add(this.Savebutton);
-            this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.textBoxAdr2);
-            this.Controls.Add(this.textBoxAdr1);
+            this.Controls.Add(this.AddFotobutton);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.pictureBoxPhoto);
-            this.Controls.Add(this.dateTimePickerExtr);
-            this.Controls.Add(this.textBoxNum);
-            this.Controls.Add(this.textBoxSeries);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBoxSex);
-            this.Controls.Add(this.dateTimePickerBirth);
-            this.Controls.Add(this.textBoxPatr);
-            this.Controls.Add(this.textBoxName);
-            this.Controls.Add(this.textBoxSurname);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddForm";
             this.Text = "Добавление ";
             this.Load += new System.EventHandler(this.AddForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,35 +485,37 @@ namespace GD_Passport
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxSurname;
-        private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.TextBox textBoxPatr;
-        private System.Windows.Forms.DateTimePicker dateTimePickerBirth;
-        private System.Windows.Forms.ComboBox comboBoxSex;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBoxSeries;
-        private System.Windows.Forms.TextBox textBoxNum;
-        private System.Windows.Forms.DateTimePicker dateTimePickerExtr;
-        private System.Windows.Forms.PictureBox pictureBoxPhoto;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBoxAdr1;
-        private System.Windows.Forms.TextBox textBoxAdr2;
-        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button AddFotobutton;
         private System.Windows.Forms.Button Savebutton;
         private System.Windows.Forms.Button Cancelbutton;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.ComboBox comboBoxDep;
-        private System.Windows.Forms.ComboBox comboBoxCity;
-        private System.Windows.Forms.ComboBox comboBoxCountry;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button7;
     }
 }
