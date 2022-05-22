@@ -1,7 +1,7 @@
 ﻿
 namespace GD_Passport
 {
-    partial class AddForm
+    partial class EditForm
     {
         /// <summary>
         /// Required designer variable.
