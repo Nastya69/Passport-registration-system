@@ -22,9 +22,6 @@ namespace GD_Passport
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            button1.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            button7.Visible = true;
-            button1.Visible = false;
 
             DBConnection.sql = "SELECT sex_title FROM sex";
             DBConnection.cmd = new NpgsqlCommand(DBConnection.sql, DBConnection.con);
@@ -57,57 +54,58 @@ namespace GD_Passport
             comboBoxCity.Enabled = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.BackColor = ColorTranslator.FromHtml("#c0e2f9");
-            buttonAdd.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            buttonDelete.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            Savebutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            Cancelbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            textBoxSurname.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            textBoxName.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            textBoxPatr.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            textBoxSeries.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            textBoxNum.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            comboBoxDep.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            textBoxAdr1.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            textBoxAdr2.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            dateTimePickerBirth.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            dateTimePickerExtr.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            comboBoxSex.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            comboBoxCountry.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            comboBoxCity.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-            button1.Visible = false;
-            button7.Visible = true;
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
-            this.BackColor = ColorTranslator.FromHtml("#798d9c");
-            buttonAdd.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            buttonDelete.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            Savebutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            Cancelbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            textBoxSurname.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            textBoxName.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            textBoxPatr.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            textBoxSeries.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            textBoxNum.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            comboBoxDep.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            textBoxAdr1.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            textBoxAdr2.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            dateTimePickerBirth.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            dateTimePickerExtr.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            comboBoxSex.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            comboBoxCountry.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            comboBoxCity.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            button7.Visible = false;
-            button1.Visible = true;
+            if (button7.BackColor == ColorTranslator.FromHtml("#9eb6c7"))
+            {
+                this.BackColor = ColorTranslator.FromHtml("#798d9c");
+                buttonAdd.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                buttonDelete.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                Savebutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                Cancelbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                textBoxSurname.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                textBoxName.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                textBoxPatr.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                textBoxSeries.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                textBoxNum.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                comboBoxDep.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                textBoxAdr1.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                textBoxAdr2.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                dateTimePickerBirth.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                dateTimePickerExtr.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                comboBoxSex.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                comboBoxCountry.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                comboBoxCity.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                button7.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+            }
+            else
+            {
+                this.BackColor = ColorTranslator.FromHtml("#c0e2f9");
+                buttonAdd.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                buttonDelete.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                Savebutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                Cancelbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                textBoxSurname.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                textBoxName.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                textBoxPatr.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                textBoxSeries.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                textBoxNum.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                comboBoxDep.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                textBoxAdr1.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                textBoxAdr2.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                dateTimePickerBirth.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                dateTimePickerExtr.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                comboBoxSex.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                comboBoxCountry.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                comboBoxCity.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+            }
         }
 
         private void AddForm_Load(object sender, EventArgs e)
         {
-
+            ToolTip t = new ToolTip();
+            t.SetToolTip(button7, "Сменить \nцвет фона");
         }
 
         private void Cancelbutton_Click(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace GD_Passport
         public Form2()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void label3_Click(object sender, EventArgs e)

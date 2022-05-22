@@ -12,10 +12,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GD_Passport
-{
+{    
     public partial class MainForm : Form
     {
         private string result = "";
+        public bool whites = true;
         //столбцы таблицы
         int passportID;
         string sur;
@@ -40,8 +41,9 @@ namespace GD_Passport
         public MainForm(bool user)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-            loadData("","");
+            //loadData("","");
             if (user == true)
             {
                 Addbutton.Enabled = false;
@@ -52,7 +54,7 @@ namespace GD_Passport
 
         private void button6_Click(object sender, EventArgs e)
         {
-            СonfirmForm s = new СonfirmForm();
+            СonfirmForm s = new СonfirmForm(whites);
             s.ShowDialog();
         }
 
@@ -67,9 +69,12 @@ namespace GD_Passport
                 Printbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
                 Searchbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
                 Exitbutton.BackColor = ColorTranslator.FromHtml("#9eb6c7");
-                textBoxSearch.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                textBoxSearch.BackColor = ColorTranslator.FromHtml("#ccdbe5");
                 dataGridView1.BackgroundColor = ColorTranslator.FromHtml("#9eb6c7");
+                checkBoxAged.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                textBoxAdr2.BackColor = ColorTranslator.FromHtml("#ccdbe5");
                 button7.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                whites = false;
             }
             else
             {
@@ -80,9 +85,12 @@ namespace GD_Passport
                 Printbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
                 Searchbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
                 Exitbutton.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-                textBoxSearch.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                textBoxSearch.BackColor = ColorTranslator.FromHtml("#ffffff");
                 dataGridView1.BackgroundColor = ColorTranslator.FromHtml("#f0f0f0");
+                checkBoxAged.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                textBoxAdr2.BackColor = ColorTranslator.FromHtml("#ffffff");
                 button7.BackColor = ColorTranslator.FromHtml("#9eb6c7");
+                whites = true;
             }
         }
 
@@ -262,6 +270,20 @@ namespace GD_Passport
             EditForm s = new EditForm(passportID, sur, name, patr, sex, dateBirth, image, isImage, series, num, dep, country, city, adr1, adr2, dateExtr, personId);
             s.ShowDialog();
             loadData("", "");
+        }
+
+        private void Deletebutton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Удаление выполнено успешно!");
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            ToolTip t = new ToolTip();
+            t.SetToolTip(Deletebutton, "Проверьте выбранные данные\nперед удалением");
+            t.SetToolTip(button7 , "Сменить \nцвет фона");
+            t.SetToolTip(checkBoxAged, "Граждане только\nпенсионного возраста");
+            t.SetToolTip(Printbutton, "Печать таблицы\nпо заданному фильтру");
         }
     }
 }
