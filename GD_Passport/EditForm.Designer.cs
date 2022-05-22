@@ -73,7 +73,7 @@ namespace GD_Passport
             this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.Location = new System.Drawing.Point(975, 15);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(69, 53);
             this.button7.TabIndex = 81;
@@ -84,7 +84,7 @@ namespace GD_Passport
             // 
             this.comboBoxCountry.FormattingEnabled = true;
             this.comboBoxCountry.Location = new System.Drawing.Point(169, 394);
-            this.comboBoxCountry.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxCountry.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCountry.Name = "comboBoxCountry";
             this.comboBoxCountry.Size = new System.Drawing.Size(184, 24);
             this.comboBoxCountry.TabIndex = 80;
@@ -94,7 +94,7 @@ namespace GD_Passport
             // 
             this.comboBoxCity.FormattingEnabled = true;
             this.comboBoxCity.Location = new System.Drawing.Point(543, 394);
-            this.comboBoxCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxCity.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCity.Name = "comboBoxCity";
             this.comboBoxCity.Size = new System.Drawing.Size(184, 24);
             this.comboBoxCity.TabIndex = 79;
@@ -103,7 +103,7 @@ namespace GD_Passport
             // 
             this.comboBoxDep.FormattingEnabled = true;
             this.comboBoxDep.Location = new System.Drawing.Point(543, 292);
-            this.comboBoxDep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxDep.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxDep.Name = "comboBoxDep";
             this.comboBoxDep.Size = new System.Drawing.Size(172, 24);
             this.comboBoxDep.TabIndex = 78;
@@ -113,12 +113,13 @@ namespace GD_Passport
             this.buttonDelete.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonDelete.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.Location = new System.Drawing.Point(783, 421);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(235, 31);
             this.buttonDelete.TabIndex = 77;
             this.buttonDelete.Text = "Удалить фотографию";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // Cancelbutton
             // 
@@ -126,41 +127,44 @@ namespace GD_Passport
             this.Cancelbutton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancelbutton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Cancelbutton.Location = new System.Drawing.Point(935, 507);
-            this.Cancelbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Cancelbutton.Margin = new System.Windows.Forms.Padding(4);
             this.Cancelbutton.Name = "Cancelbutton";
             this.Cancelbutton.Size = new System.Drawing.Size(109, 34);
             this.Cancelbutton.TabIndex = 76;
             this.Cancelbutton.Text = "Отмена";
             this.Cancelbutton.UseVisualStyleBackColor = false;
+            this.Cancelbutton.Click += new System.EventHandler(this.Cancelbutton_Click);
             // 
             // Savebutton
             // 
             this.Savebutton.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Savebutton.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Savebutton.Location = new System.Drawing.Point(784, 507);
-            this.Savebutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Savebutton.Margin = new System.Windows.Forms.Padding(4);
             this.Savebutton.Name = "Savebutton";
             this.Savebutton.Size = new System.Drawing.Size(109, 34);
             this.Savebutton.TabIndex = 75;
             this.Savebutton.Text = "Сохранить";
             this.Savebutton.UseVisualStyleBackColor = false;
+            this.Savebutton.Click += new System.EventHandler(this.Savebutton_Click);
             // 
             // buttonAdd
             // 
             this.buttonAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonAdd.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAdd.Location = new System.Drawing.Point(784, 383);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(235, 31);
             this.buttonAdd.TabIndex = 74;
             this.buttonAdd.Text = "Загрузить фотографию";
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // textBoxAdr2
             // 
             this.textBoxAdr2.Location = new System.Drawing.Point(543, 442);
-            this.textBoxAdr2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAdr2.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAdr2.Name = "textBoxAdr2";
             this.textBoxAdr2.Size = new System.Drawing.Size(184, 22);
             this.textBoxAdr2.TabIndex = 73;
@@ -168,7 +172,7 @@ namespace GD_Passport
             // textBoxAdr1
             // 
             this.textBoxAdr1.Location = new System.Drawing.Point(169, 443);
-            this.textBoxAdr1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxAdr1.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAdr1.Name = "textBoxAdr1";
             this.textBoxAdr1.Size = new System.Drawing.Size(184, 22);
             this.textBoxAdr1.TabIndex = 72;
@@ -221,7 +225,7 @@ namespace GD_Passport
             // 
             this.pictureBoxPhoto.Image = global::GD_Passport.Properties.Resources.No_Image;
             this.pictureBoxPhoto.Location = new System.Drawing.Point(783, 194);
-            this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxPhoto.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxPhoto.Name = "pictureBoxPhoto";
             this.pictureBoxPhoto.Size = new System.Drawing.Size(235, 181);
             this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -232,7 +236,7 @@ namespace GD_Passport
             // 
             this.dateTimePickerExtr.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerExtr.Location = new System.Drawing.Point(225, 293);
-            this.dateTimePickerExtr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerExtr.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerExtr.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerExtr.MinDate = new System.DateTime(1948, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerExtr.Name = "dateTimePickerExtr";
@@ -242,18 +246,20 @@ namespace GD_Passport
             // textBoxNum
             // 
             this.textBoxNum.Location = new System.Drawing.Point(441, 242);
-            this.textBoxNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNum.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNum.Name = "textBoxNum";
             this.textBoxNum.Size = new System.Drawing.Size(187, 22);
             this.textBoxNum.TabIndex = 65;
+            this.textBoxNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNum_KeyPress);
             // 
             // textBoxSeries
             // 
             this.textBoxSeries.Location = new System.Drawing.Point(91, 242);
-            this.textBoxSeries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSeries.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSeries.Name = "textBoxSeries";
             this.textBoxSeries.Size = new System.Drawing.Size(184, 22);
             this.textBoxSeries.TabIndex = 64;
+            this.textBoxSeries.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // label14
             // 
@@ -328,7 +334,7 @@ namespace GD_Passport
             "ЖЕН",
             "МУЖ"});
             this.comboBoxSex.Location = new System.Drawing.Point(441, 142);
-            this.comboBoxSex.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxSex.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(160, 24);
             this.comboBoxSex.TabIndex = 57;
@@ -337,7 +343,7 @@ namespace GD_Passport
             // 
             this.dateTimePickerBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerBirth.Location = new System.Drawing.Point(173, 142);
-            this.dateTimePickerBirth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickerBirth.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerBirth.MaxDate = new System.DateTime(2006, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerBirth.MinDate = new System.DateTime(1932, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerBirth.Name = "dateTimePickerBirth";
@@ -348,26 +354,29 @@ namespace GD_Passport
             // textBoxPatr
             // 
             this.textBoxPatr.Location = new System.Drawing.Point(783, 86);
-            this.textBoxPatr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPatr.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPatr.Name = "textBoxPatr";
             this.textBoxPatr.Size = new System.Drawing.Size(184, 22);
             this.textBoxPatr.TabIndex = 55;
+            this.textBoxPatr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPatr_KeyPress);
             // 
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(441, 89);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(184, 22);
             this.textBoxName.TabIndex = 54;
+            this.textBoxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxName_KeyPress);
             // 
             // textBoxSurname
             // 
             this.textBoxSurname.Location = new System.Drawing.Point(131, 90);
-            this.textBoxSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSurname.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(184, 22);
             this.textBoxSurname.TabIndex = 53;
+            this.textBoxSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSurname_KeyPress);
             // 
             // label6
             // 
@@ -476,7 +485,7 @@ namespace GD_Passport
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditForm";
             this.Text = "Добавление ";
             this.Load += new System.EventHandler(this.AddForm_Load);
